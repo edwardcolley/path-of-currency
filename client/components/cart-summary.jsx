@@ -22,7 +22,7 @@ export class CartSummary extends React.Component {
     var idArray = Object.keys(this.props.cart);
     return idArray.map((id, index) => {
       return (
-        <CartSummaryItem delete={this.props.delete} modal={this.toggleModal} update={this.props.update} key={id} input={this.props.cart[id]} />
+        <CartSummaryItem details={this.props.details} delete={this.props.delete} modal={this.toggleModal} update={this.props.update} key={id} input={this.props.cart[id]} />
       );
     });
   }
@@ -46,21 +46,22 @@ export class CartSummary extends React.Component {
               <Row className="justify-content-around">
                 <Button size="sm" color="secondary" onClick={() => this.props.back('catalog', {})} type="button" className="mt-5 mb-3">Shop</Button>
                 <h2 className="mt-5 text-white mobileFontHeader">Total: {priceTotalInDollars}</h2>
-                {priceTotalInDollars.length > 0 &&
+                {totalItemPrices > 0 &&
                <Button size="sm" color="primary" onClick={() => this.props.back('checkout', {})} type="button" className="mt-5 mb-3">Checkout</Button>
                 }
               </Row>
+              {totalItemPrices > 0 &&
               <Row className="justify-content-center">
                 <Table bordered responsive size="sm" className="ml-1 tableStyle">
                   <thead>
                     <tr>
-                      <th>Image</th>
-                      <th>Name</th>
-                      <th>Unit Price</th>
-                      <th>Total</th>
-                      <th>Quantity</th>
-                      <th>Update</th>
-                      <th>Remove</th>
+                      <th className="text-center">Image</th>
+                      <th className="text-center">Name</th>
+                      <th className="text-center">Unit Price</th>
+                      <th className="text-center">Total</th>
+                      <th className="text-center">Quantity</th>
+                      <th className="text-center">Update</th>
+                      <th className="text-center">Remove</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -68,6 +69,12 @@ export class CartSummary extends React.Component {
                   </tbody>
                 </Table>
               </Row>
+              }
+              {totalItemPrices === 0 &&
+                <Row className="justify-content-center">
+                  <p className="text-white font-weight-bold">You have no items in your cart</p>
+                </Row>
+              }
             </Container>
           </Col>
         </Row>

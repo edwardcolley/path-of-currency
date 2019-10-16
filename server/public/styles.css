@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Exo&display=swap');
 
+.carouselPointer {
+  cursor: pointer;
+}
+
 @media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 667px) 
@@ -1342,7 +1346,7 @@ input {
   }
 
   .zoom3:hover {
-    transform: scale(3.5);
+    transform: scale(2.1);
   }
   
   .zoom:hover {

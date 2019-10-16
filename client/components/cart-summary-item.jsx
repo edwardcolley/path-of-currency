@@ -7,7 +7,9 @@ export class CartSummaryItem extends React.Component {
     super(props);
     this.state = {
       removed: false,
-      value: this.props.input.quantity
+      value: this.props.input.quantity,
+      initValue: this.props.input.quantity,
+      updateFunction: null
     };
     this.increment = this.increment.bind(this);
     this.decrement = this.decrement.bind(this);
@@ -23,7 +25,9 @@ export class CartSummaryItem extends React.Component {
   }
 
   decrement() {
-    this.setState(prevState => ({ value: prevState.value > 0 ? --prevState.value : 0 }));
+    this.setState(prevState => ({
+      value: prevState.value > 1 ? --prevState.value : 1
+    }));
   }
 
   deleteItem() {
@@ -35,8 +39,13 @@ export class CartSummaryItem extends React.Component {
   }
 
   updateItem() {
-    this.props.update(this.props.input, this.state.value);
-    this.props.modal();
+    if (this.state.value < this.state.initValue || this.state.value > this.state.initValue) {
+      this.props.update(this.props.input, this.state.value);
+      this.props.modal();
+    }
+    this.setState({
+      initValue: this.state.value
+    });
   }
 
   toggleDeleteModal() {
@@ -61,19 +70,19 @@ export class CartSummaryItem extends React.Component {
           <td>
             <Row className="text-center mt-3">
               <Col>
-                {this.props.input.name}
+                <Button onClick={() => this.props.details('product details', this.props.input.product_id)} color="link">{this.props.input.name}</Button>
               </Col>
             </Row>
           </td>
           <td>
-            <Row className="text-center mt-3">
+            <Row className="text-right mt-3">
               <Col>
                 {unitPrice}
               </Col>
             </Row>
           </td>
           <td>
-            <Row className="text-center mt-3">
+            <Row className="text-right mt-3">
               <Col>
                 {totalPrice}
               </Col>

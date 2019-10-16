@@ -24,7 +24,7 @@ export default class ProductDetails extends React.Component {
   }
 
   decrement() {
-    this.setState(prevState => ({ value: prevState.value > 0 ? --prevState.value : 0 }));
+    this.setState(prevState => ({ value: prevState.value > 1 ? --prevState.value : 1 }));
   }
 
   componentDidMount() {
@@ -81,10 +81,7 @@ export default class ProductDetails extends React.Component {
                 </Col>
               </Row>
               <Row className="justify-content-md-center">
-                {/* <Col md={{ size: 6, offset: 1 }}> */}
                 <button onClick={this.toggleModal} type="button" className="mobileBtn btn btn-primary mx-auto">Add to Cart</button>
-                {/* <br/> */}
-                {/* </Col> */}
               </Row>
               <br/>
               <p className="mt-2 mb-4 text-white longDescription">{this.state.product.longDescription}</p>
