@@ -68,10 +68,10 @@ export class LandingPageCarousel extends React.Component {
         next={this.next}
         previous={this.previous}
       >
-        <CarouselIndicators items={this.props.images} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+        <CarouselIndicators className="carouselPointer" items={this.props.images} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
         {slides}
-        <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-        <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+        <CarouselControl className="carouselPointer" direction="prev" directionText="Previous" onClickHandler={this.previous} />
+        <CarouselControl className="carouselPointer" direction="next" directionText="Next" onClickHandler={this.next} />
       </Carousel>
     );
   }

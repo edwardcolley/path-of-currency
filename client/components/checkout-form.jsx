@@ -74,8 +74,8 @@ export class CheckoutForm extends React.Component {
     var name = document.getElementById('Name').value;
     var address = document.getElementById('Address').value;
     var cardRegEx = /[0-9]{4,4}-[0-9]{4,4}-[0-9]{4,4}-[0-9]{4,4}/;
-    var nameRegEx = /[a-zA-z]{2,40}/;
-    var addressRegEx = /^[0-9_\s]+[a-zA-Z0-9_\s\r\n.,]+[0-9]{5}$/;
+    var nameRegEx = /[a-zA-z-]{2,40}/;
+    var addressRegEx = /^[0-9_\s]+[a-zA-Z0-9_\s\r\n.,]/;
     var isCardValid = false;
     var isNameValid = false;
     var isAddressValid = false;
@@ -154,6 +154,9 @@ export class CheckoutForm extends React.Component {
                       <span className="input-group-text" id="inputGroup-sizing-lg">required</span>
                     </div>
                     <textarea className="form-control" id="Address" aria-label="Required" placeholder="Shipping Address" onChange={this.handleChangeShippingAddress} />
+                  </div>
+                  <div className="mt-4">
+                    <p className="text-white"><i className="fas fa-exclamation"></i> Reminder: Do not enter any personal information. This is page is for demonstration only.</p>
                   </div>
                   <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalBody>
