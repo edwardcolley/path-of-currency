@@ -57,7 +57,7 @@ export class LandingPageCarousel extends React.Component {
           onExited = {this.onExited}
           key = {input}
         >
-          <img height="300" width="100%" className="shadow p-3 mb-5 bg-white rounded noPadding" src={image.path} />
+          <img className="shadow p-3 mb-5 bg-white rounded noPadding" src={image.path} />
         </CarouselItem>
       );
     });

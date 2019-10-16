@@ -252,7 +252,7 @@ export default class App extends React.Component {
         <React.Fragment>
           <div className="productList">
             <NavBar onClick={this.setView} cartItemCount={this.state.cart}/>
-            <div className="container-fluid">
+            <div className="container-fluid pb-5">
               {this.state.adverts.length !== 0 &&
             <LandingPageCarousel images={this.state.adverts}/>
               }

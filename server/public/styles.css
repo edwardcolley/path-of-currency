@@ -200,6 +200,8 @@ body,
   .noPadding {
       padding: 0 !important;
       margin: 2vh auto;
+      height: 200px;
+      width: 100%;
   }
 
   .cardStyling {
@@ -515,6 +517,8 @@ input {
   .noPadding {
       padding: 0 !important;
       margin: 2vh auto;
+      height: 300px;
+      width: 100%;
   }
 
   .cardStyling {
@@ -835,6 +839,8 @@ input {
   .noPadding {
       padding: 0 !important;
       margin: 2vh auto;
+      height: 300px;
+      width: 100%;
   }
 
   .cardStyling {
@@ -1150,6 +1156,8 @@ input {
   .noPadding {
       padding: 0 !important;
       margin: 2vh auto;
+      height: 400px;
+      width: 100%;
   }
 
   .cardStyling {
@@ -1487,6 +1495,8 @@ input {
     .noPadding {
         padding: 0 !important;
         margin: 2vh auto;
+        height: 400px;
+        width: 100%;
     }
   
     .cardStyling {
