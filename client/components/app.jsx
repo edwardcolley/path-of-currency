@@ -1,6 +1,4 @@
 import React from 'react';
-// import { Header } from './header';
-// import { Container } from 'reactstrap';
 import { ProductList } from './product-list';
 import ProductDetails from './product-details';
 import { CartSummary } from './cart-summary';
@@ -252,7 +250,7 @@ export default class App extends React.Component {
         <React.Fragment>
           <div className="productList">
             <NavBar onClick={this.setView} cartItemCount={this.state.cart}/>
-            <div className="container-fluid">
+            <div className="container-fluid pb-5">
               {this.state.adverts.length !== 0 &&
             <LandingPageCarousel images={this.state.adverts}/>
               }
@@ -265,7 +263,7 @@ export default class App extends React.Component {
       return (
         <React.Fragment>
           <NavBar onClick={this.setView} cartItemCount={this.state.cart}/>
-          <CartSummary delete={this.deleteFromCart} update={this.updateCart} cart={this.state.cart} back={this.setView}/>;
+          <CartSummary details={this.setView} delete={this.deleteFromCart} update={this.updateCart} cart={this.state.cart} back={this.setView}/>;
         </React.Fragment>
       );
     } else if (this.state.view.name === 'checkout') {

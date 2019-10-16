@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Exo&display=swap');
 
+.carouselPointer {
+  cursor: pointer;
+}
+
 @media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 667px) 
@@ -200,6 +204,8 @@ body,
   .noPadding {
       padding: 0 !important;
       margin: 2vh auto;
+      height: 200px;
+      width: 100%;
   }
 
   .cardStyling {
@@ -515,6 +521,8 @@ input {
   .noPadding {
       padding: 0 !important;
       margin: 2vh auto;
+      height: 300px;
+      width: 100%;
   }
 
   .cardStyling {
@@ -835,6 +843,8 @@ input {
   .noPadding {
       padding: 0 !important;
       margin: 2vh auto;
+      height: 300px;
+      width: 100%;
   }
 
   .cardStyling {
@@ -1150,6 +1160,8 @@ input {
   .noPadding {
       padding: 0 !important;
       margin: 2vh auto;
+      height: 400px;
+      width: 100%;
   }
 
   .cardStyling {
@@ -1334,7 +1346,7 @@ input {
   }
 
   .zoom3:hover {
-    transform: scale(3.5);
+    transform: scale(2.1);
   }
   
   .zoom:hover {
@@ -1487,6 +1499,8 @@ input {
     .noPadding {
         padding: 0 !important;
         margin: 2vh auto;
+        height: 400px;
+        width: 100%;
     }
   
     .cardStyling {
