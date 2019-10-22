@@ -70,7 +70,7 @@ export class CartSummaryItem extends React.Component {
           <td>
             <Row className="text-center mt-3">
               <Col>
-                <Button onClick={() => this.props.details('product details', this.props.input.product_id)} color="link">{this.props.input.name}</Button>
+                <Button onClick={() => this.props.details('product details', this.props.input.product_id)} color="link" className="cartLink">{this.props.input.name}</Button>
               </Col>
             </Row>
           </td>
