@@ -39,6 +39,10 @@ export class CheckoutForm extends React.Component {
   }
 
   handleChangeCreditCard(event) {
+    let numericTest = /^[0-9-]+$/;
+    if (!numericTest.test(event.target.value)) {
+      return false;
+    }
     this.setState({
       creditCard: event.target.value
     });
@@ -146,7 +150,7 @@ export class CheckoutForm extends React.Component {
                       <span className="input-group-text" id="inputGroup-sizing-lg">required</span>
                     </div>
 
-                    <input type="text" name="Number" id="Num" className="form-control" onChange={this.handleChangeCreditCard} placeholder="Payment Method: xxxx-xxxx-xxxx-xxxx" aria-label="Payment Method" aria-describedby="inputGroup-sizing-lg" />
+                    <input type="text" name="Number" id="Num" className="form-control" value={this.state.creditCard} onChange={this.handleChangeCreditCard} placeholder="Payment Method: xxxx-xxxx-xxxx-xxxx" aria-label="Payment Method" aria-describedby="inputGroup-sizing-lg" />
                   </div>
 
                   <div className="input-group input-group mt-4">
