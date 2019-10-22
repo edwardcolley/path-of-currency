@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 09, 2019 at 11:01 PM
+-- Generation Time: Oct 21, 2019 at 09:47 PM
 -- Server version: 5.7.26-0ubuntu0.18.04.1
 -- PHP Version: 7.2.19-0ubuntu0.18.04.1
 
@@ -52,6 +52,13 @@ CREATE TABLE `cart` (
   `sessionID` mediumint(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `product_id`, `quantity`, `sessionID`) VALUES
+(74, 6, 15, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -68,7 +75,9 @@ CREATE TABLE `cart_session` (
 --
 
 INSERT INTO `cart_session` (`id`, `session`) VALUES
-(2, '2019-09-27 22:40:56');
+(2, '2019-09-27 22:40:56'),
+(3, '2019-10-10 21:23:43'),
+(4, '2019-10-14 22:06:42');
 
 -- --------------------------------------------------------
 
@@ -104,25 +113,25 @@ INSERT INTO `images` (`id`, `image`, `product_id`) VALUES
 (26, '/images/mirror.png', 8),
 (27, '/images/mirror2.jpeg', 8),
 (29, '/images/shavswrappings1.png', 9),
-(30, '/images/shavswrappings3.png', 9),
+(30, '/images/shavswrappings2.png', 9),
 (31, '/images/bringerofrain1.png', 10),
-(32, '/images/bringerofrain5.png', 10),
+(32, '/images/bringerofrain2.png', 10),
 (33, '/images/rainbow1.png', 11),
-(34, '/images/rainbow2.png', 11),
+(34, '/images/rainbow3.png', 11),
 (35, '/images/atziri1.png', 12),
-(36, '/images/atziri2.png', 12),
+(36, '/images/atziri3.png', 12),
 (37, '/images/headhunter1.png', 13),
-(38, '/images/headhunter2.png', 13),
+(38, '/images/headhunter3.png', 13),
 (39, '/images/facebreakers1.png', 14),
-(40, '/images/facebreakers2.png', 14),
+(40, '/images/facebreakers3.png', 14),
 (41, '/images/mjolner.png', 15),
-(42, '/images/mjolner.png', 15),
+(42, '/images/mjolner3.png', 15),
 (43, '/images/windripper1.png', 16),
-(44, '/images/windripper2.png', 16),
+(44, '/images/windripper3.png', 16),
 (45, '/images/karuiward1.png', 17),
-(46, '/images/karuiward2.png', 17),
+(46, '/images/karuiward3.png', 17),
 (47, '/images/ventors1.png', 18),
-(48, '/images/ventors2.png', 18);
+(48, '/images/ventors3.png', 18);
 
 -- --------------------------------------------------------
 
@@ -211,12 +220,12 @@ ALTER TABLE `adverts`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 --
 -- AUTO_INCREMENT for table `cart_session`
 --
 ALTER TABLE `cart_session`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `images`
 --
