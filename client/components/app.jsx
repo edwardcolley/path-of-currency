@@ -132,8 +132,6 @@ export default class App extends React.Component {
                 shortDescription: myJson.item.shortDescription
               }
             }
-          }, () => {
-            // console.log('addtocart this.state.cart: ', this.state.cart);
           });
         } else {
           this.setState({
@@ -149,8 +147,6 @@ export default class App extends React.Component {
                 shortDescription: myJson.item.shortDescription
               }
             }
-          }, () => {
-            // console.log(this.state.cart);
           });
 
         }
@@ -190,13 +186,11 @@ export default class App extends React.Component {
                 shortDescription: myJson.item.shortDescription
               }
             }
-          }, () => {
-            // console.log('updateCart this.state.cart: ', this.state.cart);
           });
         } else {
           var newState = {};
           for (var key in this.state.cart) {
-            if (key != [product.product_id]) {
+            if (key !== [product.product_id]) {
               newState[key] = this.state.cart[key];
             }
           }
@@ -218,7 +212,7 @@ export default class App extends React.Component {
       .then(myJson => {
         var newState = {};
         for (var key in this.state.cart) {
-          if (key != [product.product_id]) {
+          if (key !== [product.product_id]) {
             newState[key] = this.state.cart[key];
           }
         }

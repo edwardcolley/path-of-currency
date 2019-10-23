@@ -11,6 +11,7 @@ export class CartSummaryItem extends React.Component {
       initValue: this.props.input.quantity,
       updateFunction: null
     };
+    this.iconID = '#cartUpdateIcon' + this.props.input.product_id;
     this.increment = this.increment.bind(this);
     this.decrement = this.decrement.bind(this);
     this.updateItem = this.updateItem.bind(this);
@@ -22,6 +23,7 @@ export class CartSummaryItem extends React.Component {
     this.setState(prevState => ({
       value: ++prevState.value
     }));
+
   }
 
   decrement() {
@@ -42,6 +44,7 @@ export class CartSummaryItem extends React.Component {
     if (this.state.value < this.state.initValue || this.state.value > this.state.initValue) {
       this.props.update(this.props.input, this.state.value);
       this.props.modal();
+
     }
     this.setState({
       initValue: this.state.value
@@ -55,6 +58,7 @@ export class CartSummaryItem extends React.Component {
   }
 
   render() {
+
     const unitPrice = '$' + ((this.props.input.price / 100).toFixed(2));
     const totalPrice = '$' + ((this.state.value) * (this.props.input.price / 100)).toFixed(2);
     return (
