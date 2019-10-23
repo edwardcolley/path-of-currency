@@ -38,9 +38,6 @@ export class NavBar extends React.Component {
               <NavLink href="#" onClick={() => this.props.onClick('catalog', {})}>Top Items <span className="sr-only">(current)</span></NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#" onClick={() => this.props.onClick('cart', {})}>Checkout Cart <span className="sr-only">(current)</span></NavLink>
-            </NavItem>
-            <NavItem>
               <NavLink href="#"><i className="fas fa-shopping-cart zoom" onClick={() => this.props.onClick('cart', {})}> {this.renderCart()}</i></NavLink>
             </NavItem>
           </Nav>
