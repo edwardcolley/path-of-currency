@@ -92,7 +92,7 @@ export default class ProductDetails extends React.Component {
               Product has been added to cart!
               </ModalHeader>
               <ModalFooter>
-                <Button onClick={this.toggleModal} color="info">Keep Shopping</Button>
+                <Button onClick={() => this.props.back('catalog', {})} color="info">Keep Shopping</Button>
                 <Button onClick={() => { this.props.back('cart', {}); } } color="primary">Go To Cart</Button>
               </ModalFooter>
             </Modal>
