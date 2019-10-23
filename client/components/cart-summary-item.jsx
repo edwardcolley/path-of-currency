@@ -11,7 +11,7 @@ export class CartSummaryItem extends React.Component {
       initValue: this.props.input.quantity,
       updateFunction: null
     };
-    this.iconID = '#cartUpdateIcon' + this.props.input.product_id;
+    this.iconID = 'cartUpdateIcon' + this.props.input.product_id;
     this.increment = this.increment.bind(this);
     this.decrement = this.decrement.bind(this);
     this.updateItem = this.updateItem.bind(this);
@@ -20,6 +20,12 @@ export class CartSummaryItem extends React.Component {
   }
 
   increment() {
+    let newValue = this.state.value + 1;
+    if (newValue > this.state.initValue || newValue < this.state.initValue) {
+      document.getElementById(this.iconID).classList.add('zoom');
+    } else if (newValue == this.state.initValue) {
+      document.getElementById(this.iconID).classList.remove('zoom');
+    }
     this.setState(prevState => ({
       value: ++prevState.value
     }));
@@ -27,6 +33,12 @@ export class CartSummaryItem extends React.Component {
   }
 
   decrement() {
+    let newValue = this.state.value - 1;
+    if (newValue > this.state.initValue || newValue < this.state.initValue) {
+      document.getElementById(this.iconID).classList.add('zoom');
+    } else if (newValue == this.state.initValue) {
+      document.getElementById(this.iconID).classList.remove('zoom');
+    }
     this.setState(prevState => ({
       value: prevState.value > 1 ? --prevState.value : 1
     }));
@@ -44,6 +56,7 @@ export class CartSummaryItem extends React.Component {
     if (this.state.value < this.state.initValue || this.state.value > this.state.initValue) {
       this.props.update(this.props.input, this.state.value);
       this.props.modal();
+      document.getElementById(this.iconID).classList.remove('zoom');
 
     }
     this.setState({
@@ -58,7 +71,6 @@ export class CartSummaryItem extends React.Component {
   }
 
   render() {
-
     const unitPrice = '$' + ((this.props.input.price / 100).toFixed(2));
     const totalPrice = '$' + ((this.state.value) * (this.props.input.price / 100)).toFixed(2);
     return (
@@ -102,7 +114,7 @@ export class CartSummaryItem extends React.Component {
           <td>
             <Row className="text-center">
               <Col>
-                <i className="far fa-edit fa-lg mt-3 trashIcon zoom" onClick={this.updateItem}></i>
+                <i className="far fa-edit fa-lg mt-3 trashIcon" id={this.iconID} onClick={this.updateItem}></i>
               </Col>
             </Row>
           </td>
