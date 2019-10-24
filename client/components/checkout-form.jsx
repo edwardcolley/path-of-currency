@@ -39,7 +39,7 @@ export class CheckoutForm extends React.Component {
   }
 
   handleChangeCreditCard(event) {
-    let numericTest = /^[0-9-]{1,20}$/;
+    let numericTest = /^[0-9-]{1,19}$/;
     if (!event.target.value) {
       this.setState({
         creditCard: event.target.value
