@@ -114,7 +114,7 @@ export class CartSummaryItem extends React.Component {
           <td>
             <Row className="text-center">
               <Col>
-                <i className="far fa-edit fa-lg mt-3 trashIcon" id={this.iconID} onClick={this.updateItem}></i>
+                <i className="far fa-edit fa-lg mt-3" id={this.iconID} onClick={this.updateItem}></i>
               </Col>
             </Row>
           </td>
