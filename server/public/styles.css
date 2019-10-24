@@ -14,6 +14,10 @@
   margin-right: auto;
 }
 
+.zoom {
+  cursor: pointer;
+}
+
 @media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 667px) 
@@ -325,6 +329,7 @@ input {
 .zoom:hover {
   transform: scale(1.5);
 }
+
 
 .zoom2 {
   transition: transform .3s;
