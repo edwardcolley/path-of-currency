@@ -1,5 +1,13 @@
 import React from 'react';
-import { Navbar, NavbarBrand, NavbarToggler, NavLink, Collapse, Nav, NavItem } from 'reactstrap';
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarToggler,
+  NavLink,
+  Collapse,
+  Nav,
+  NavItem
+} from 'reactstrap';
 
 export class NavBar extends React.Component {
   constructor(props) {
@@ -30,8 +38,14 @@ export class NavBar extends React.Component {
   render() {
     return (
       <Navbar className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <NavbarBrand className="navbarStyle"><img height="40" src="/images/poeicon3.jpg" className="mt-1 poeIcon" onClick={() => this.props.onClick('catalog', {})}/> Path of Currency</NavbarBrand>
-        <NavbarToggler onClick={this.toggle}/>
+        <NavbarBrand className="navbarStyle">
+          <img
+            height="40"
+            src="/images/poeicon3.jpg"
+            className="mt-1 poeIcon"
+            onClick={() => this.props.onClick('catalog', {})}
+          /> Path of Currency</NavbarBrand>
+        <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>

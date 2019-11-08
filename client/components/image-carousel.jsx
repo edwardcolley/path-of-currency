@@ -1,5 +1,10 @@
 import React from 'react';
-import { Carousel, CarouselItem, CarouselControl, CarouselIndicators } from 'reactstrap';
+import {
+  Carousel,
+  CarouselItem,
+  CarouselControl,
+  CarouselIndicators
+} from 'reactstrap';
 
 export class ImageCarousel extends React.Component {
   constructor(props) {
@@ -50,9 +55,9 @@ export class ImageCarousel extends React.Component {
     const slides = this.props.images.map((image, input) => {
       return (
         <CarouselItem
-          onExiting = {this.onExiting}
-          onExited = {this.onExited}
-          key = {input}
+          onExiting={this.onExiting}
+          onExited={this.onExited}
+          key={input}
         >
           <img className="mobileImg carouselStyle shadow p-3 mb-5 bg-dark rounded" src={image} />
         </CarouselItem>
@@ -65,10 +70,22 @@ export class ImageCarousel extends React.Component {
         next={this.next}
         previous={this.previous}
       >
-        <CarouselIndicators className="carouselPointer" items={this.props.images} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+        <CarouselIndicators
+          className="carouselPointer"
+          items={this.props.images}
+          activeIndex={activeIndex}
+          onClickHandler={this.goToIndex} />
         {slides}
-        <CarouselControl className="carouselPointer" direction="prev" directionText="Previous" onClickHandler={this.previous} />
-        <CarouselControl className="carouselPointer" direction="next" directionText="Next" onClickHandler={this.next} />
+        <CarouselControl
+          className="carouselPointer"
+          direction="prev"
+          directionText="Previous"
+          onClickHandler={this.previous} />
+        <CarouselControl
+          className="carouselPointer"
+          direction="next"
+          directionText="Next"
+          onClickHandler={this.next} />
       </Carousel>
     );
   }

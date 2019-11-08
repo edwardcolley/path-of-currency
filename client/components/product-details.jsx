@@ -1,6 +1,13 @@
 import React from 'react';
 import { ImageCarousel } from './image-carousel';
-import { Row, Col, Modal, ModalFooter, ModalHeader, Button } from 'reactstrap';
+import {
+  Row,
+  Col,
+  Modal,
+  ModalFooter,
+  ModalHeader,
+  Button
+} from 'reactstrap';
 import { Quantity } from './quantity';
 
 export default class ProductDetails extends React.Component {
@@ -69,7 +76,7 @@ export default class ProductDetails extends React.Component {
           <Row className="productRow mt-5">
             <Col sm="1" lg="0"></Col>
             <Col sm="10" lg="6" className="mobileDetailsStyle tabletDetailsStyle">
-              <ImageCarousel images={this.state.product.images}/>
+              <ImageCarousel images={this.state.product.images} />
             </Col>
 
             <Col lg={{ size: 4 }} className="productDescription">
@@ -77,23 +84,34 @@ export default class ProductDetails extends React.Component {
               <p className="font-weight-bold text-white text-center mt-4">{this.state.product.shortDescription}</p>
               <Row className="justify-content-md-center">
                 <Col md={{ size: 5 }} className="mb-2">
-                  <Quantity quantity={this.state.value} increment={this.increment} decrement={this.decrement}/>
+                  <Quantity
+                    quantity={this.state.value}
+                    increment={this.increment}
+                    decrement={this.decrement}
+                  />
                 </Col>
               </Row>
               <Row className="justify-content-md-center">
-                <button onClick={this.toggleModal} type="button" className="mobileBtn btn btn-primary mx-auto">Add to Cart</button>
+                <button
+                  onClick={this.toggleModal}
+                  type="button"
+                  className="mobileBtn btn btn-primary mx-auto">Add to Cart</button>
               </Row>
-              <br/>
+              <br />
               <p className="mt-2 mb-4 text-white longDescription">{this.state.product.longDescription}</p>
-              <br/>
+              <br />
             </Col>
             <Modal isOpen={this.state.modal}>
               <ModalHeader className="text-center">
-              Product has been added to cart!
+                Product has been added to cart!
               </ModalHeader>
               <ModalFooter>
-                <Button onClick={() => this.props.back('catalog', {})} color="info">Keep Shopping</Button>
-                <Button onClick={() => { this.props.back('cart', {}); } } color="primary">Go To Cart</Button>
+                <Button
+                  onClick={() => this.props.back('catalog', {})}
+                  color="info">Keep Shopping</Button>
+                <Button
+                  onClick={() => { this.props.back('cart', {}); }}
+                  color="primary">Go To Cart</Button>
               </ModalFooter>
             </Modal>
           </Row>
