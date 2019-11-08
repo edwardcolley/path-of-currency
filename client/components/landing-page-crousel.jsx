@@ -1,5 +1,10 @@
 import React from 'react';
-import { Carousel, CarouselItem, CarouselControl, CarouselIndicators } from 'reactstrap';
+import {
+  Carousel,
+  CarouselItem,
+  CarouselControl,
+  CarouselIndicators
+} from 'reactstrap';
 
 export class LandingPageCarousel extends React.Component {
   constructor(props) {
@@ -53,25 +58,40 @@ export class LandingPageCarousel extends React.Component {
     const slides = this.props.images.map((image, input) => {
       return (
         <CarouselItem
-          onExiting = {this.onExiting}
-          onExited = {this.onExited}
-          key = {input}
+          onExiting={this.onExiting}
+          onExited={this.onExited}
+          key={input}
         >
-          <img className="shadow p-3 mb-5 bg-white rounded noPadding" src={image.path} />
+          <img className="shadow p-3 mb-5 bg-white rounded noPadding"
+            src={image.path} />
         </CarouselItem>
       );
     });
 
     return (
-      <Carousel style={carouselStyle} className="landingCarousel"
+      <Carousel
+        style={carouselStyle}
+        className="landingCarousel"
         activeIndex={activeIndex}
         next={this.next}
         previous={this.previous}
       >
-        <CarouselIndicators className="carouselPointer" items={this.props.images} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+        <CarouselIndicators
+          className="carouselPointer"
+          items={this.props.images}
+          activeIndex={activeIndex}
+          onClickHandler={this.goToIndex} />
         {slides}
-        <CarouselControl className="carouselPointer" direction="prev" directionText="Previous" onClickHandler={this.previous} />
-        <CarouselControl className="carouselPointer" direction="next" directionText="Next" onClickHandler={this.next} />
+        <CarouselControl
+          className="carouselPointer"
+          direction="prev"
+          directionText="Previous"
+          onClickHandler={this.previous} />
+        <CarouselControl
+          className="carouselPointer"
+          direction="next"
+          directionText="Next"
+          onClickHandler={this.next} />
       </Carousel>
     );
   }

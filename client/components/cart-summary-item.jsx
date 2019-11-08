@@ -1,5 +1,12 @@
 import React from 'react';
-import { Button, Row, Col, Modal, ModalHeader, ModalFooter } from 'reactstrap';
+import {
+  Button,
+  Row,
+  Col,
+  Modal,
+  ModalHeader,
+  ModalFooter
+} from 'reactstrap';
 import { Quantity } from './quantity';
 
 export class CartSummaryItem extends React.Component {
@@ -79,14 +86,24 @@ export class CartSummaryItem extends React.Component {
           <td>
             <Row className="text-center">
               <Col>
-                <img className="zoom3" height="50" width="50"src={this.props.input.image} alt="item image" />
+                <img
+                  className="zoom3"
+                  height="50"
+                  width="50"
+                  src={this.props.input.image}
+                  alt="item image"
+                />
               </Col>
             </Row>
           </td>
           <td>
             <Row className="text-center mt-3">
               <Col>
-                <Button onClick={() => this.props.details('product details', this.props.input.product_id)} color="link" className="cartLink">{this.props.input.name}</Button>
+                <Button
+                  onClick={() => this.props.details('product details', this.props.input.product_id)}
+                  color="link"
+                  className="cartLink">{this.props.input.name}
+                </Button>
               </Col>
             </Row>
           </td>
@@ -107,30 +124,49 @@ export class CartSummaryItem extends React.Component {
           <td>
             <Row className="mt-2">
               <Col>
-                <Quantity increment={this.increment} decrement={this.decrement} quantity={this.state.value} />
+                <Quantity
+                  increment={this.increment}
+                  decrement={this.decrement}
+                  quantity={this.state.value}
+                />
               </Col>
             </Row>
           </td>
           <td>
             <Row className="text-center">
               <Col>
-                <i className="far fa-edit fa-lg mt-3" id={this.iconID} onClick={this.updateItem}></i>
+                <i
+                  className="far fa-edit fa-lg mt-3"
+                  id={this.iconID}
+                  onClick={this.updateItem}>
+                </i>
               </Col>
             </Row>
           </td>
           <td>
             <Row className="text-center">
               <Col>
-                <i className="fas fa-trash-alt fa-lg mt-3 trashIcon zoom" onClick={this.toggleDeleteModal}></i>
+                <i
+                  className="fas fa-trash-alt fa-lg mt-3 trashIcon zoom"
+                  onClick={this.toggleDeleteModal}>
+                </i>
               </Col>
             </Row>
           </td>
         </tr>
-        <Modal isOpen={this.state.deleteModal} toggle={this.toggleDeleteModal}>
-          <ModalHeader toggle={this.toggleDeleteModal}>Are you sure you want to remove this?</ModalHeader>
+        <Modal
+          isOpen={this.state.deleteModal}
+          toggle={this.toggleDeleteModal}>
+          <ModalHeader
+            toggle={this.toggleDeleteModal}>Are you sure you want to remove this?
+          </ModalHeader>
           <ModalFooter>
-            <Button color="primary" onClick={this.deleteItem}>Remove Item</Button>{' '}
-            <Button color="secondary" onClick={this.toggleDeleteModal}>Cancel</Button>
+            <Button
+              color="primary"
+              onClick={this.deleteItem}>Remove Item</Button>{' '}
+            <Button
+              color="secondary"
+              onClick={this.toggleDeleteModal}>Cancel</Button>
           </ModalFooter>
         </Modal>
       </React.Fragment>

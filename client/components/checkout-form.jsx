@@ -1,5 +1,13 @@
 import React from 'react';
-import { Row, Button, Col, Modal, ModalFooter, ModalBody, ModalHeader } from 'reactstrap';
+import {
+  Row,
+  Button,
+  Col,
+  Modal,
+  ModalFooter,
+  ModalBody,
+  ModalHeader
+} from 'reactstrap';
 
 export class CheckoutForm extends React.Component {
   constructor(props) {
@@ -23,7 +31,6 @@ export class CheckoutForm extends React.Component {
   }
 
   handleSubmit(event) {
-    // event.preventDefault();
     this.props.placeOrder(this.state);
     this.setState({
       name: '',
@@ -137,37 +144,74 @@ export class CheckoutForm extends React.Component {
             </Row>
             <form onSubmit={this.handleSubmit}>
               <Row className="justify-content-around">
-                <Button color="primary ml-5" onClick={() => this.props.back('catalog', {})} type="button" className="mobileFont mt-5 mb-3">Continue Shopping</Button>
+                <Button
+                  color="primary ml-5"
+                  onClick={() => this.props.back('catalog', {})}
+                  type="button"
+                  className="mobileFont mt-5 mb-3">Continue Shopping</Button>
                 <h2 className="mobileFontHeader text-white mt-5">Total: {priceTotalInDollars}</h2>
-                <Button onClick={this.validateNumber} color="primary" className="mobileFont orderBtn mt-5 mr-5">Place Order</Button>
+                <Button
+                  onClick={this.validateNumber}
+                  color="primary"
+                  className="mobileFont orderBtn mt-5 mr-5">Place Order</Button>
               </Row>
               <div className="row justify-content-center">
                 <div className="col-xs-4 col-lg-9">
                   <div className="input-group input-group mt-2">
                     <div className="input-group-prepend">
-                      <span className="input-group-text" id="inputGroup-sizing-lg">required</span>
+                      <span
+                        className="input-group-text"
+                        id="inputGroup-sizing-lg">required</span>
                     </div>
-                    <input type="text" id="Name" className="form-control" onChange={this.handleChangeName} placeholder="Full Name" aria-label="Full Name" aria-describedby="inputGroup-sizing-lg" />
+                    <input
+                      type="text"
+                      id="Name"
+                      className="form-control"
+                      onChange={this.handleChangeName}
+                      placeholder="Full Name"
+                      aria-label="Full Name"
+                      aria-describedby="inputGroup-sizing-lg" />
                   </div>
 
                   <div className="input-group input-group mt-4">
                     <div className="input-group-prepend">
-                      <span className="input-group-text" id="inputGroup-sizing-lg">required</span>
+                      <span
+                        className="input-group-text"
+                        id="inputGroup-sizing-lg">required</span>
                     </div>
 
-                    <input type="text" name="Number" id="Num" className="form-control" value={this.state.creditCard} onChange={this.handleChangeCreditCard} placeholder="Payment Method: xxxx-xxxx-xxxx-xxxx" aria-label="Payment Method" aria-describedby="inputGroup-sizing-lg" />
+                    <input
+                      type="text"
+                      name="Number"
+                      id="Num"
+                      className="form-control"
+                      value={this.state.creditCard}
+                      onChange={this.handleChangeCreditCard}
+                      placeholder="Payment Method: xxxx-xxxx-xxxx-xxxx"
+                      aria-label="Payment Method"
+                      aria-describedby="inputGroup-sizing-lg" />
                   </div>
 
                   <div className="input-group input-group mt-4">
                     <div className="input-group-prepend">
-                      <span className="input-group-text" id="inputGroup-sizing-lg">required</span>
+                      <span
+                        className="input-group-text"
+                        id="inputGroup-sizing-lg">required</span>
                     </div>
-                    <textarea className="form-control" id="Address" aria-label="Required" placeholder="Shipping Address" onChange={this.handleChangeShippingAddress} />
+                    <textarea
+                      className="form-control"
+                      id="Address"
+                      aria-label="Required"
+                      placeholder="Shipping Address"
+                      onChange={this.handleChangeShippingAddress} />
                   </div>
                   <div className="mt-4">
                     <p className="text-white"><i className="fas fa-exclamation"></i> Reminder: Do not enter any personal information. This is page is for demonstration only.</p>
                   </div>
-                  <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                  <Modal
+                    isOpen={this.state.modal}
+                    toggle={this.toggle}
+                    className={this.props.className}>
                     <ModalBody>
                       <p>Thank you! No purchase has been processed</p>
                       <p>Name: {this.state.name}</p>
@@ -175,17 +219,23 @@ export class CheckoutForm extends React.Component {
                       <p>Address: {this.state.shippingAddress}</p>
                     </ModalBody>
                     <ModalFooter>
-                      <Button color="secondary" onClick={this.toggleSubmit}>Close</Button>
+                      <Button
+                        color="secondary"
+                        onClick={this.toggleSubmit}>Close</Button>
                     </ModalFooter>
                   </Modal>
                   {/* warning modal */}
-                  <Modal isOpen={this.state.warningModal} toggle={this.toggleWarning}>
+                  <Modal
+                    isOpen={this.state.warningModal}
+                    toggle={this.toggleWarning}>
                     <ModalHeader toggle={this.WarningToggle}>Error!</ModalHeader>
                     <ModalBody>
                       {this.state.warningStatement}
                     </ModalBody>
                     <ModalFooter>
-                      <Button color="secondary" onClick={this.toggleWarning}>Close</Button>
+                      <Button
+                        color="secondary"
+                        onClick={this.toggleWarning}>Close</Button>
                     </ModalFooter>
                   </Modal>
                 </div>
