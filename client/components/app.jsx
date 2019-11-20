@@ -203,6 +203,7 @@ export default class App extends React.Component {
   }
 
   deleteFromCart(product) {
+    console.log('delete ran');
     fetch('/api/cart.php', {
       method: 'DELETE',
       credentials: 'include',
@@ -212,7 +213,7 @@ export default class App extends React.Component {
       .then(myJson => {
         var newState = {};
         for (var key in this.state.cart) {
-          if (key !== [product.product_id]) {
+          if (key != [product.product_id]) {
             newState[key] = this.state.cart[key];
           }
         }
