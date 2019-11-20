@@ -16,7 +16,8 @@ export class CartSummaryItem extends React.Component {
       removed: false,
       value: this.props.input.quantity,
       initValue: this.props.input.quantity,
-      updateFunction: null
+      updateFunction: null,
+      deleteModal: false
     };
     this.iconID = 'cartUpdateIcon' + this.props.input.product_id;
     this.increment = this.increment.bind(this);
