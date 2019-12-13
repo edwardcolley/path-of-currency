@@ -29,3 +29,5 @@ A full stack LAMP & React shopping cart app.
 
 - `dev` - Start Webpack Dev Server at `localhost:3000`
 - `build` - Run Webpack to build the React client into `server/public`.
+
+![Screenshot](https://github.com/edwardcolley/wicked-sales/server/public/images/pathOfCurrency.png)
